@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="600.0" styleClass="" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lt.vilniustech.bps.controller.MainWindowController">
+   <children>
+      <Label layoutX="184.0" layoutY="25.0" text="Bilietų pardavimo sistema">
+         <font>
+            <Font name="Segoe UI Black" size="18.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" layoutX="80.0" layoutY="293.0" prefHeight="133.0" prefWidth="440.0" spacing="30.0">
+         <children>
+            <MFXButton buttonType="RAISED" mnemonicParsing="false" onAction="#onBuyTicketClick" prefHeight="40.0" prefWidth="150.0" text="Pirkti bilietus">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </MFXButton>
+            <MFXButton buttonType="RAISED" mnemonicParsing="false" onAction="#onExitClick" prefHeight="40.0" prefWidth="150.0" text="Uždaryti">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </MFXButton>
+         </children>
+      </VBox>
+      <ImageView fitHeight="181.0" fitWidth="300.0" layoutX="209.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/BPS_logo.png"/>
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
