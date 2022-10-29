@@ -12,5 +12,5 @@
     <li>Set Java 19 as SDK for the project</li>
     <li>Run <i>mvn clean install</i> to download all required dependencies</li>
     <li>Open and run <i>InitialDataTest#createInitialData</i> JUnit test case to set up initial data in MongoDB database (routes, stations, stop schedules)</li>
-    <li>Run JavaFX application in <i>BpsApplication</i></li>
+    <li>Run JavaFX application in <i>BpsApplication</i> class</li>
 </ul>
