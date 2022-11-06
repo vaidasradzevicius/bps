@@ -52,9 +52,6 @@ public class PrintTicketsController extends AbstractController implements Initia
         showDialog(Alert.AlertType.INFORMATION, "PDF dokumentas sėkmingai išsaugotas");
     }
 
-    public void onSendTicketsViaEmailClicked() {
-    }
-
     public void onBackToMainWindowClicked(ActionEvent event) {
         changeScene(event, View.MAIN);
     }
