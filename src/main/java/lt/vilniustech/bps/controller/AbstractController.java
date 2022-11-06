@@ -13,7 +13,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Optional;
 
 public abstract class AbstractController {
     private static final Logger logger = LoggerFactory.getLogger(AbstractController.class);
@@ -55,7 +54,7 @@ public abstract class AbstractController {
      */
     protected boolean showConfirmationDialog(String text) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, text, ButtonType.CANCEL, ButtonType.OK);
-        Optional<ButtonType> buttonClicked = alert.showAndWait();
+        alert.showAndWait();
 
         return alert.getResult() == ButtonType.OK;
     }
