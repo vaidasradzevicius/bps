@@ -13,6 +13,8 @@ import lt.vilniustech.bps.dto.StopTime;
 import lt.vilniustech.bps.dto.Ticket;
 import org.apache.commons.collections4.CollectionUtils;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 @Singleton
@@ -44,8 +46,10 @@ public class ServiceOperations {
         return FXCollections.observableList(stations);
     }
 
-    public ObservableList<StopTime> getStopTimesForStation(Station station) {
+    public ObservableList<StopTime> getStopTimesForStation(Station station, LocalDate selectedDate) {
         List<StopTime> stopTimes = dao.fetchStopTimes(station);
+        eliminatePassedTimes(stopTimes, selectedDate);
+
         return FXCollections.observableList(stopTimes);
     }
 
@@ -57,6 +61,20 @@ public class ServiceOperations {
         Customer savedBuyer = dao.saveItem(order.getBuyer());
         order.setBuyer(savedBuyer);
         return dao.saveItem(order);
+    }
+
+    private void eliminatePassedTimes(List<StopTime> stopTimes, LocalDate selectedDate) {
+        if (isCurrentDay(selectedDate)) {
+            stopTimes.removeIf(this::isStopTimeBeforeNow);
+        }
+    }
+
+    private boolean isCurrentDay(LocalDate date) {
+        return date.isEqual(LocalDate.now());
+    }
+
+    private boolean isStopTimeBeforeNow(StopTime stopTime) {
+        return stopTime.getTime().isBefore(LocalTime.now());
     }
 
 }

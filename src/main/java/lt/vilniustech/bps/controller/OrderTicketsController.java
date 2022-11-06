@@ -88,7 +88,7 @@ public class OrderTicketsController extends AbstractController implements Initia
         if (startStation == null || destinationStation == null || selectedDate == null) {
             showDialog(Alert.AlertType.WARNING, "Prašome pasirinkti kelionės pradžios, pabaigos stoteles ir datą");
         } else {
-            stopTimesListView.setItems(serviceOps.getStopTimesForStation(startStation));
+            stopTimesListView.setItems(serviceOps.getStopTimesForStation(startStation, selectedDate));
         }
     }
 
